@@ -9,26 +9,33 @@ import "./index.css";
 // const author="OG G";
 
 
-const firstBook = {
-  author: "total badass",
-  title: "How to be a badass",
-  image: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss060e033385large.jpg",
-};
-
-const secondBook = {
-  author: "OG G",
-  title: "The badassery continues",
-  image: "https://www.nasa.gov/sites/default/files/thumbnails/image/curiosity_selfie.jpg",
-};
+const books = [
+  {
+    author: "Jordan Moore",
+    title: "Interesting Facts For Curious Minds",
+    img: "https://www.nasa.gov/sites/default/files/thumbnails/image/curiosity_selfie.jpg",
+    id: 1,
+  },
+  {
+    author: "James Clear",
+    title: "Atomic Habits",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
+    id: 2,
+  },
+];
 
 const BookList = () => {
   return (
-    <section className = "book">
-      <Book img={firstBook.image} title={firstBook.title} author={firstBook.author}/>
-      <Book img={secondBook.image} title={secondBook.title} author={secondBook.author}/>
+    <section className="booklist">
+      {books.map((dog) => {
+        const {author, title, img, id} = dog;
+          return(
+            <Book {...dog} key={dog.id}/>
+          )
+      })}
     </section>
-  );
-};
+  )
+}
 
 const Book = (props) => {
   console.log(props);
