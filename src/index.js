@@ -3,6 +3,11 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
+const img ="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss060e033385large.jpg"; 
+const title="Badass";
+const author="Badass Astronaut";
+
+
 const BookList = () => {
   return (
     <section className = "book">
@@ -16,40 +21,14 @@ const BookList = () => {
 const Book = () => {
   return (
     <section>
-      <Image />
-      <Title />
-      <Author />
+      <img src={img} alt="badass"/>;
+      <h2>{title}</h2>
+      <h2>{author}</h2>
     </section>
   );
 };
 
 
-const Image = () => {
-  return (
-    <section className="books">
-      <img
-        src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss060e033385large.jpg"
-        alt="Nasa picture of the day"
-      />
-    </section>
-  );
-};
-
-const Author = () => {
-  return (
-    <section>
-      <h2>Will Peterson</h2>
-    </section>
-  );
-};
-
-const Title = () => {
-  return (
-    <section>
-      <h1>Why NASA rocks</h1>
-    </section>
-  );
-};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<BookList />);
 
