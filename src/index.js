@@ -1,12 +1,11 @@
-import React from "react"
+import React from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-const img ="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss060e033385large.jpg"; 
-const title="Badass";
-const author="Badass Astronaut";
-
+const img="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss060e033385large.jpg";
+const title="Still a Badass";
+const author="Total Badass";
 
 const BookList = () => {
   return (
@@ -21,9 +20,9 @@ const BookList = () => {
 const Book = () => {
   return (
     <section>
-      <img src={img} alt="badass"/>;
+      <img src={img} alt="Total badass times two" />
       <h2>{title}</h2>
-      <h2>{author}</h2>
+      <h1>{author}</h1>
     </section>
   );
 };
