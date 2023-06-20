@@ -10,19 +10,24 @@ const author="Total Badass";
 const BookList = () => {
   return (
     <section className = "book">
-      <Book />
-      <Book />
-      <Book />
+      <Book img={img} title={title} author={author}/>
+      <Book img={img} title={title} author={author}/>
+      <Book job="developer"/>
+      <Book job="Astronaut" number={23}/>
+      <Book jobNumber={24}/>
     </section>
   );
 };
 
-const Book = () => {
+const Book = (props) => {
   return (
     <section>
       <img src={img} alt="Total badass times two" />
       <h2>{title}</h2>
       <h1>{author}</h1>
+      <h1>{props.job}</h1>
+      <h1>{props.number}</h1>
+      <h1>{props.jobNumber}</h1>
     </section>
   );
 };
