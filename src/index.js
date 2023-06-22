@@ -3,48 +3,46 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
+const Image = () => {
+  return (
+    <img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/151000/151478/iss069e003412_th.jpg" alt="water everywhere"/>
+  );
+};
 
-// const image="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss060e033385large.jpg"; 
-// const title="How to be a badass";
-// const author="OG G";
+const Title = () => {
+  return (
+    <section>
+    <h1>Land Around the Water</h1>
+    </section>
+  );
+};
 
+const Author = () => {
+  return (
+    <section>
+      <h2>Iwrot Tdaht</h2>
+    </section>
+  );
+};
 
-const books = [
-  {
-    author: "Jordan Moore",
-    title: "Interesting Facts For Curious Minds",
-    img: "https://www.nasa.gov/sites/default/files/thumbnails/image/curiosity_selfie.jpg",
-    id: 1,
-  },
-  {
-    author: "James Clear",
-    title: "Atomic Habits",
-    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
-    id: 2,
-  },
-];
+const Book = () => {
+  return (
+    <section className="books">
+      <img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/151000/151460/tutuila_oli_2022203_th.jpg"
+      alt="what is this"/>
+      <h1>Title</h1>
+      <h2>Author</h2>
+    </section>
+  );
+};
 
 const BookList = () => {
   return (
     <section className="booklist">
-      {books.map((dog) => {
-        const {author, title, img, id} = dog;
-          return(
-            <Book {...dog} key={dog.id}/>
-          )
-      })}
-    </section>
-  )
-}
-
-const Book = (props) => {
-  console.log(props);
-  const {img, title, author} = props;
-  return (
-    <section>
-      <img src={img} alt="Total badass times two" />
-      <h2>{title}</h2>
-      <h1>{author}</h1>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
     </section>
   );
 };
@@ -52,10 +50,3 @@ const Book = (props) => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<BookList />);
-
-
-
-
-
-
-
