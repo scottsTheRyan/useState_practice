@@ -3,40 +3,17 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-const Image = () => {
-  return (
-    <section>
-      <img src= "https://images-assets.nasa.gov/image/NHQ202306200005/NHQ202306200005~thumb.jpg"
-        alt="Badass"
-      />
-    </section>
-  );
-};
-
-const Title = () => {
-  return (
-    <section>
-      <h2>Badass, a Story</h2>
-    </section>
-  );
-};
-
-const Author = () => {
-  return (
-    <section>
-      <h1>Badass</h1>
-    </section>
-  );
-};
-
+const picture = "https://images-assets.nasa.gov/image/NHQ202306200005/NHQ202306200005~thumb.jpg";
+const title = "It's a wonderful life";
+const author = "OG Badass";
 
 
 const Book = () => {
   return (
     <section className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={picture} alt="total badass" />
+      <h2>{title}</h2>
+      <h1>{author}</h1>
     </section>
   );
 };
