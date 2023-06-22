@@ -3,28 +3,44 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-const picture = "https://images-assets.nasa.gov/image/NHQ202306200005/NHQ202306200005~thumb.jpg";
-const title = "It's a wonderful life";
-const author = "OG Badass";
 
 
-const Book = () => {
+const firstBook = {
+  author: "Jordan Moore",
+  title: "Interesting Facts For Curious Minds",
+  img: "./images/book-1.jpg",
+};
+const secondBook = {
+  author: "James Clear",
+  title: "Atomic Habits",
+  img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
+};
+
+
+const Book = (props) => {
   return (
     <section className="book">
-      <img src={picture} alt="total badass" />
-      <h2>{title}</h2>
-      <h1>{author}</h1>
+      <img src={props.img} alt="total badass" />
+      <h2>{props.title}</h2>
+      <h1>{props.author}</h1>
     </section>
   );
 };
 
 
-
 const Booklist = () => {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
+      <Book
+        img={firstBook.img}
+        title={firstBook.author}
+        author={firstBook.title}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.author}
+        author={secondBook.title}
+      />
       <Book />
     </section>
   );
