@@ -5,14 +5,18 @@ import "./index.css";
 
 const Image = () => {
   return (
-    <img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/151000/151478/iss069e003412_th.jpg" alt="water everywhere"/>
+    <section>
+      <img src= "https://images-assets.nasa.gov/image/NHQ202306200005/NHQ202306200005~thumb.jpg"
+        alt="Badass"
+      />
+    </section>
   );
 };
 
 const Title = () => {
   return (
     <section>
-    <h1>Land Around the Water</h1>
+      <h2>Badass, a Story</h2>
     </section>
   );
 };
@@ -20,33 +24,34 @@ const Title = () => {
 const Author = () => {
   return (
     <section>
-      <h2>Iwrot Tdaht</h2>
+      <h1>Badass</h1>
     </section>
   );
 };
+
+
 
 const Book = () => {
   return (
-    <section className="books">
-      <img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/151000/151460/tutuila_oli_2022203_th.jpg"
-      alt="what is this"/>
-      <h1>Title</h1>
-      <h2>Author</h2>
+    <section className="book">
+      <Image />
+      <Title />
+      <Author />
     </section>
   );
 };
 
-const BookList = () => {
+
+
+const Booklist = () => {
   return (
     <section className="booklist">
       <Book />
       <Book />
       <Book />
-      <Book />
     </section>
   );
 };
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<BookList />);
+root.render(<Booklist />);
