@@ -3,23 +3,28 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-const firstBook = {
-  author: "Jordan Moore",
-  title: "Interesting Facts For Curious Minds",
-  img: "https://images-assets.nasa.gov/image/KSC-20230613-PH-KLS02_0073/KSC-20230613-PH-KLS02_0073~thumb.jpg",
-};
-const secondBook = {
-  author: "James Clear",
-  title: "Atomic Habits",
-  img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
-};
+const books = [
+  {
+    author: "Jordan Moore",
+    title: "Interesting Facts For Curious Minds",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
+    id: 1,
+  },
+  {
+    author: "James Clear",
+    title: "Atomic Habits",
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
+    id: 2,
+  },
+];
 
-// have to add ClassName for styles to be applied,
-// className in react, class in html
+
+//to destructure you can inverse assign the components to the function props
 const Book = (props) => {
-  const { author, title, img } = props;
+  console.log(props);
+  const {img, title, author } = props;
   return (
-      <article className="book">
+    <article className="book">
       <img src={img} alt="Intresting facts from curious minds" />
       <h2>{title}</h2>
       <h1>{author}</h1>
@@ -29,22 +34,14 @@ const Book = (props) => {
 
 function BookList() {
   return (
-    <section>
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author}
-      />
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      />
+    <section className="BookList">
+      {books.map((dog) => {
+        const {img, title, author} = dog; 
+        return <Book {...dog} key={dog.id}/>
+      })};
     </section>
   );
-}
-
-
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
