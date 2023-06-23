@@ -18,28 +18,54 @@ const books = [
   },
 ];
 
+function BookList() {
+  return (
+    <section className="booklist">
+    <EventExamples />
+      {books.map((dog) => {
+        const { img, title, author, id } = dog;
+        return <Book {...dog} key={dog.id} />;
+      })}
+      ;
+    </section>
+  );
+};
 
-//to destructure you can inverse assign the components to the function props
+const EventExamples = () => {
+  const handleFormInput = (e) => {
+    console.log(e);
+  };
+  
+  const handleButtonClick = () => {
+    alert('button clicked!!!')
+  };
+
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log('form submitted')
+  };
+
+
+  return (
+    <section>
+      <form onSubmit={handleFormSubmission}>
+        <h2>Review Forms</h2>
+        <input onChange={handleFormInput}/>
+      </form>
+      <button onClick={handleFormInput}>click here</button>
+    </section>
+  )
+};
+
+
 const Book = (props) => {
-  console.log(props);
-  const {img, title, author } = props;
+  const { img, title, author } = props;
   return (
     <article className="book">
       <img src={img} alt="Intresting facts from curious minds" />
       <h2>{title}</h2>
       <h1>{author}</h1>
     </article>
-  );
-};
-
-function BookList() {
-  return (
-    <section className="BookList">
-      {books.map((dog) => {
-        const {img, title, author} = dog; 
-        return <Book {...dog} key={dog.id}/>
-      })};
-    </section>
   );
 };
 
