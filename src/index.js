@@ -32,28 +32,28 @@ function BookList() {
 
 const EventExamples = () => {
   const handleFormInput = () => {
-  };
+      console.log("tacos")
+  }
+
   const handleButtonClick = () => {
-    alert('Awe snap');
+    alert('things things things')
   };
+
   const handleFormSubmission = (e) => {
     e.preventDefault();
-  };
+    console.log('pizza piiiiie');
+  }
 
   return (
     <section>
-      <form onSubmit={handleFormSubmission}>
-        <h2>Tell Me Something New</h2>
+      <form>
+        <h2>it's a form</h2>
         <input onChange={handleFormInput} />
       </form>
-      <button onClick={handleButtonClick}>Click Here</button>
-
+      <button onClick={handleButtonClick}>Say Sompthin'</button>
     </section>
-  )
-
-
-};
-
+  );
+}
 
 const Book = (props) => {
   const { img, title, author } = props;
