@@ -21,40 +21,37 @@ const books = [
 function BookList() {
   return (
     <section className="booklist">
-    <EventExamples />
+      <EventExamples />
       {books.map((dog) => {
         const { img, title, author, id } = dog;
         return <Book {...dog} key={dog.id} />;
       })}
-      ;
     </section>
   );
 };
 
 const EventExamples = () => {
-  const handleFormInput = (e) => {
-    console.log(e);
+  const handleFormInput = () => {
   };
-  
   const handleButtonClick = () => {
-    alert('button clicked!!!')
+    alert('Awe snap');
   };
-
   const handleFormSubmission = (e) => {
     e.preventDefault();
-    console.log('form submitted')
   };
-
 
   return (
     <section>
       <form onSubmit={handleFormSubmission}>
-        <h2>Review Forms</h2>
-        <input onChange={handleFormInput}/>
+        <h2>Tell Me Something New</h2>
+        <input onChange={handleFormInput} />
       </form>
-      <button onClick={handleFormInput}>click here</button>
+      <button onClick={handleButtonClick}>Click Here</button>
+
     </section>
   )
+
+
 };
 
 
