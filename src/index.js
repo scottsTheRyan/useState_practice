@@ -29,16 +29,42 @@ const Book = (props) => {
   );
 };
 
-
 const BookList = () => {
   return (
     <section className="booklist">
+      <EventExamples />
       {books.map((dog) => {
-        return <Book {...dog} key={dog.id} />
-      })};
+        return <Book {...dog} key={dog.id} />;
+      })}
     </section>
   );
-};
+}
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<BookList />);
+
+
+const EventExamples = () => {
+    const handleFormInput = (e) => {
+    }
+    const handleButtonClick = () => {
+      alert('you clicked a button')
+    }
+    const handleFormSubmission = (e) => {
+      e.preventDefault()
+      console.log('form submitted')
+    }
+
+    return (
+      <section>
+        <form onSubmit={handleFormSubmission}>
+          <h2>This is a form</h2>
+          <input 
+            onChange={handleFormInput}
+            />
+        </form>
+        <button onClick={handleButtonClick}>Hunt Me</button>
+      </section>
+    )
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<BookList />);
