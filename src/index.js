@@ -3,68 +3,76 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-
 const books = [
-    {
-  author: "Bob White",
-  title: "Another total badass",
-  img: "https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/iss060e033385large.jpg",
-},
-{
-  author: "A Leon",
-  title: "Thie Planet",
-  img: "https://www.nasa.gov/sites/default/files/thumbnails/image/curiosity_selfie.jpg",
-},
-]
-
+  {
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
+    title: "Interesting Facts For Curious Minds",
+    author: "Jordan Moore",
+    id: 1,
+  },
+  {
+    img: "https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg",
+    title: "Atomic Habits",
+    author: "James Clear",
+    id: 2,
+  },
+];
 
 const Book = (props) => {
-  const {img, title, author} = props;
+  const { img, title, author } = props;
   return (
     <section className="book">
-      <img src={img} alt="total badass" />
-      <h2>{title}</h2> 
+      
+      <img src={img} alt="Alternate name" />
+      <h2>{title}</h2>
       <h1>{author}</h1>
     </section>
   );
 };
 
 const BookList = () => {
+  
   return (
     <section className="booklist">
       <EventExamples />
       {books.map((dog) => {
+        const { img, title, author, id } = dog;
         return <Book {...dog} key={dog.id} />;
       })}
+      ;
     </section>
   );
+};
+
+const EventExamples = () => {
+  const handleFormInput = () => {
+  }
+  const handleButtonClick = () => {
+    alert('You clicked me')
+  }
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log('Form submitted')
+  };
+
+  return (
+    <section>
+      <form onSubmit={handleFormSubmission}>
+        <h2>Doing The Thing</h2>
+        <input onChange={handleFormInput} />
+      </form>
+      <button onClick={handleButtonClick}>Click Me</button>
+    </section>
+  )
+
+
+
+
+
+
+
 }
 
 
-
-const EventExamples = () => {
-    const handleFormInput = (e) => {
-    }
-    const handleButtonClick = () => {
-      alert('you clicked a button')
-    }
-    const handleFormSubmission = (e) => {
-      e.preventDefault()
-      console.log('form submitted')
-    }
-
-    return (
-      <section>
-        <form onSubmit={handleFormSubmission}>
-          <h2>This is a form</h2>
-          <input 
-            onChange={handleFormInput}
-            />
-        </form>
-        <button onClick={handleButtonClick}>Hunt Me</button>
-      </section>
-    )
-  }
-
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<BookList />);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<BookList />)
