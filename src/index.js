@@ -44,9 +44,9 @@ const BookList = () => {
 const EventExamples = () => {
   const handleFormSubmission = (e) => {
     e.preventdefault();
-    console.log(e);
   }
   const handleFormInput = (e) => {
+    console.log(e);
     console.log('event happened')
   }
   const handleButtonClick = () => {
