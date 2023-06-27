@@ -21,10 +21,48 @@ const books = [
 const Book = (props) => {
   const {img, title, author}=props;
   return(
-    <section>
-      <img src={img} alt="alt things"
+    <section className="book">
+      <img src={img} alt="alt things"/>
+      <h2>{title}</h2>
+      <h1>{author}</h1>
     </section>
-  )
+  );
+};
+
+const BookList = () => {
+  return (
+    <section className="booklist">
+      <EventExamples />
+      {books.map((dog) => {
+        const { img, title, author, id } = dog;
+        return <Book {...dog} key={dog.id} />;
+      })}
+    </section>
+  );
+}
+
+const EventExamples = () => {
+  const handleFormSubmission = (e) => {
+    e.preventdefault();
+    console.log(e);
+  }
+  const handleFormInput = (e) => {
+    console.log('event happened')
+  }
+  const handleButtonClick = () => {
+    alert('time to get this done!')
+ }
+
+
+return (
+  <section>
+    <form onSubmit={handleFormSubmission}>
+    <h2>Testing, is this form on?</h2>
+      <input onChange={handleFormInput}/>
+    </form>
+    <button onClick={handleButtonClick}>Clickadee Dee</button>
+  </section>
+) 
 }
 
 
