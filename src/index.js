@@ -19,59 +19,17 @@ const books = [
 ];
 
 const Book = (props) => {
-  const { img, title, author } = props;
-  return (
-    <section className="book">
-      
-      <img src={img} alt="Alternate name" />
-      <h2>{title}</h2>
-      <h1>{author}</h1>
-    </section>
-  );
-};
-
-const BookList = () => {
-  
-  return (
-    <section className="booklist">
-      <EventExamples />
-      {books.map((dog) => {
-        const { img, title, author, id } = dog;
-        return <Book {...dog} key={dog.id} />;
-      })}
-      ;
-    </section>
-  );
-};
-
-const EventExamples = () => {
-  const handleFormInput = () => {
-  }
-  const handleButtonClick = () => {
-    alert('You clicked me')
-  }
-  const handleFormSubmission = (e) => {
-    e.preventDefault();
-    console.log('Form submitted')
-  };
-
-  return (
+  const {img, title, author}=props;
+  return(
     <section>
-      <form onSubmit={handleFormSubmission}>
-        <h2>Doing The Thing</h2>
-        <input onChange={handleFormInput} />
-      </form>
-      <button onClick={handleButtonClick}>Click Me</button>
+      <img src={img} alt="alt things"
     </section>
   )
-
-
-
-
-
-
-
 }
+
+
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
